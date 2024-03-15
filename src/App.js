@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './App.css'
+import './App.css';
+import backgroundImage from './assets/bg.png';
 
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
@@ -18,11 +19,11 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = 'WINNER: ' + winner;
   } else if (squares.every(square => square !== null)) {
-    status = 'Draw';
+    status = 'DRAW';
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = 'NEXT PLAYER: ' + (xIsNext ? 'X' : 'O');
   }
 
   // Function to determine if a square should be highlighted
@@ -94,6 +95,9 @@ export default function Game() {
       </div>
       <div className="game-info">
         <button onClick={jumpToStart}>Reset Game</button>
+      </div>
+      <div className="game-bg">
+        <img src={backgroundImage} alt="Background" />
       </div>
     </div>
   );

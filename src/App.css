@@ -81,12 +81,20 @@ body {
 
 .status {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
 }
 
 
 .game {
   display: flex;
   flex-direction: column;
+  margin-top: 200px;
 }
 
 .game-info {
@@ -98,4 +106,17 @@ body {
 .game-info button{
   border-radius: 15px;
   font-size: larger;
+}
+
+.game-bg img{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1; /* Pushes the background behind other elements */
+  background-size: cover;
+  background-position: center;
+
 }
